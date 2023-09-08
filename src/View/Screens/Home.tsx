@@ -8,6 +8,7 @@ import {
   TextInput,
 } from 'react-native';
 import COLORS from '../../Consts/colors';
+import {TouchableOpacity} from 'react-native';
 
 const Home = () => {
   return (
@@ -17,10 +18,12 @@ const Home = () => {
           <Text style={styles.headerTxt1}>Welcome to</Text>
           <Text style={styles.headerTxt2}>Plants World</Text>
         </View>
-        <Image
-          source={require('../../Assets/trolley.png')}
-          style={styles.image}
-        />
+        <TouchableOpacity>
+          <Image
+            source={require('../../Assets/trolley.png')}
+            style={styles.image}
+          />
+        </TouchableOpacity>
       </View>
       <View style={styles.searchBar}>
         <View style={styles.searchComponent}>
@@ -32,10 +35,12 @@ const Home = () => {
         </View>
         <View style={styles.srtBtnContainer}>
           <View style={styles.sortBtn}>
-            <Image
-              source={require('../../Assets/sort.png')}
-              style={styles.srtImg}
-            />
+            <TouchableOpacity>
+              <Image
+                source={require('../../Assets/sort.png')}
+                style={styles.srtImg}
+              />
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -83,6 +88,8 @@ const styles = StyleSheet.create({
     flex: 1,
     color: COLORS.dark,
     marginLeft: 5,
+    fontSize: 15,
+    fontWeight: 'bold',
   },
   sortBtn: {
     width: 40,
@@ -96,6 +103,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     marginTop: -2,
+    color: COLORS.light,
   },
   srtBtnContainer: {
     marginRight: -0.5,
