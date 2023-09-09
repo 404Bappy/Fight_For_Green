@@ -6,23 +6,25 @@ import {
   StyleSheet,
   Image,
   TextInput,
-  FlatList,
+  Dimensions,
 } from 'react-native';
 import COLORS from '../../Consts/colors';
 import {TouchableOpacity} from 'react-native';
+import {FlatList} from 'react-native';
 import Plant from '../../Consts/Plant';
-import { NavigationContainer } from '@react-navigation/native';
+import ICON from 'react-native-vector-icons/MaterialIcons';
+const width = Dimensions.get('window').width / 2 - 30;
 
 const Home = () => {
   const [catergoryIndex, setCategoryIndex] = React.useState(0);
 
   const categories = ['POPULAR', 'ORGANIC', 'INDOORS', 'SYNTHETIC'];
 
-  const Card = ({Plant}}) => {
+  const Card = ({Plant}) => {
     return (
       <TouchableOpacity
         activeOpacity={0.8}
-        onPress={() => Navigatio.navigate('Details', Plant)}>
+        onPress={() => NavigationContainer.navigate('Details', Plant)}>
         <View style={styles.card}>
           <View style={{alignItems: 'flex-end'}}>
             <View
@@ -32,15 +34,15 @@ const Home = () => {
                 borderRadius: 20,
                 justifyContent: 'center',
                 alignItems: 'center',
-                backgroundColor: plant.like
+                backgroundColor: Plant.like
                   ? 'rgba(245, 42, 42,0.2)'
                   : 'rgba(0,0,0,0.2) ',
               }}>
-              {/* <Icon
+              <ICON
                 name="favorite"
                 size={18}
-                color={plant.like ? COLORS.red : COLORS.black}
-              /> */}
+                color={Plant.like ? COLORS.red : COLORS.dark}
+              />
             </View>
           </View>
 
@@ -138,21 +140,11 @@ const Home = () => {
           ))}
         </View>
       </View>
-      <View>
-        <FlatList
-          columnWrapperStyle={{justifyContent: 'space-between'}}
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={{
-            marginTop: 10,
-            paddingBottom: 50,
-          }}
-          numColumns={2}
-          data={Plant}
-          renderItem={({item}) => {
-            return <Card Plant={item} />;
-          }}
-        />
-      </View>
+      <FlatList
+        numColumns={2}
+        data={Plant}
+        renderItem={item => <Card Plant={item} />}
+      />
     </SafeAreaView>
   );
 };
@@ -240,5 +232,19 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
     borderBottomWidth: 2,
     borderColor: COLORS.green,
+  },
+  card: {
+    height: 225,
+    backgroundColor: COLORS.light,
+    width,
+    marginHorizontal: 2,
+    borderRadius: 10,
+    marginBottom: 20,
+    padding: 15,
+  },
+  imageLove: {
+    height: 20,
+    width: 20,
+    color: COLORS.light,
   },
 });
