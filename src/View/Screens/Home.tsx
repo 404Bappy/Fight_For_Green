@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import {
   View,
@@ -19,12 +20,12 @@ const Home = () => {
   const [catergoryIndex, setCategoryIndex] = React.useState(0);
 
   const categories = ['POPULAR', 'ORGANIC', 'INDOORS', 'SYNTHETIC'];
-
+  // @ts-ignore
   const Card = ({Plant}) => {
     return (
       <TouchableOpacity activeOpacity={0.8}>
         <View style={styles.card}>
-          <View style={{alignItems: 'flex-end'}}>
+          <View style={styles.favContainer}>
             <View
               style={{
                 width: 30,
@@ -240,5 +241,8 @@ const styles = StyleSheet.create({
   plusAdd: {
     height: 25,
     width: 25,
+  },
+  favContainer: {
+    alignItems: 'flex-end',
   },
 });
