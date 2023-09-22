@@ -23,13 +23,14 @@ const Home = () => {
         />
       </View>
       <View style={styles.searchBar}>
-        <View>
+        <View style={styles.searchComponent}>
           <Image
             source={require('../../Assets/find.png')}
             style={styles.image}
           />
-          <TextInput placeholder="Search" />
+          <TextInput placeholder="Search" style={styles.input} />
         </View>
+        <View></View>
       </View>
     </SafeAreaView>
   );
@@ -62,5 +63,18 @@ const styles = StyleSheet.create({
     marginTop: 13,
     flexDirection: 'row',
   },
-  image: {width: 40, height: 40},
+  image: {width: 40, height: 40, marginLeft: 20},
+  searchComponent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: COLORS.light,
+    borderRadius: 10,
+    flex: 1,
+    height: 50,
+  },
+  input: {
+    flex: 1,
+    color: COLORS.dark,
+    marginLeft: 5,
+  },
 });
