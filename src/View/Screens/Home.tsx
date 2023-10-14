@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
-
+import Icons from 'react-native-vector-icons/MaterialIcons';
 import COLORS from '../../Consts/colors';
 
 const Home = () => {
@@ -11,6 +11,7 @@ const Home = () => {
           <Text style={styles.headerTxt1}>Welcome to</Text>
           <Text style={styles.headerTxt2}>Plants World</Text>
         </View>
+        <Icons name="shopping-cart" size={24} color={COLORS.dark} />
       </View>
     </SafeAreaView>
   );
