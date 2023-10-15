@@ -1,6 +1,5 @@
 import React from 'react';
-import {View, Text, SafeAreaView, StyleSheet} from 'react-native';
-import IconCart from 'react-native-vector-icons/MaterialIcons';
+import {View, Text, SafeAreaView, StyleSheet, Image} from 'react-native';
 import COLORS from '../../Consts/colors';
 
 const Home = () => {
@@ -11,8 +10,12 @@ const Home = () => {
           <Text style={styles.headerTxt1}>Welcome to</Text>
           <Text style={styles.headerTxt2}>Plants World</Text>
         </View>
-        <IconCart name="shopping-cart" size={38} color={COLORS.dark} />
+        <Image
+          source={require('../../Assets/trolley.png')}
+          style={styles.image}
+        />
       </View>
+      <View style={styles.searchBar}></View>
     </SafeAreaView>
   );
 };
@@ -40,4 +43,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: COLORS.green,
   },
+  searchBar: {
+    marginTop: 13,
+    flexDirection: 'row',
+  },
+  image: {width: 40, height: 40},
 });
