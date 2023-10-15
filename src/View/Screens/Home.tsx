@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, SafeAreaView, StyleSheet, Image} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  StyleSheet,
+  Image,
+  TextInput,
+} from 'react-native';
 import COLORS from '../../Consts/colors';
 
 const Home = () => {
@@ -15,7 +22,15 @@ const Home = () => {
           style={styles.image}
         />
       </View>
-      <View style={styles.searchBar}></View>
+      <View style={styles.searchBar}>
+        <View>
+          <Image
+            source={require('../../Assets/find.png')}
+            style={styles.image}
+          />
+          <TextInput placeholder="Search" />
+        </View>
+      </View>
     </SafeAreaView>
   );
 };
