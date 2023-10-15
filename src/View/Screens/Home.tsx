@@ -30,7 +30,12 @@ const Home = () => {
           />
           <TextInput placeholder="Search" style={styles.input} />
         </View>
-        <View></View>
+        <View style={styles.sortBtn}>
+          <Image
+            source={require('../../Assets/sort.png')}
+            style={styles.image}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -77,4 +82,5 @@ const styles = StyleSheet.create({
     color: COLORS.dark,
     marginLeft: 5,
   },
+  sortBtn: {},
 });
