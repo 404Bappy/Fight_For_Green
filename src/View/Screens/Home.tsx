@@ -11,6 +11,18 @@ import COLORS from '../../Consts/colors';
 import {TouchableOpacity} from 'react-native';
 
 const Home = () => {
+  const Categories = ['POPULAR', 'ORGANIC', 'INDOORS', 'SYNTHETIC'];
+
+  const CategoryList = () => {
+    return (
+      <View>
+        {Categories.map((item, index) => (
+          <Text>{item}</Text>
+        ))}
+      </View>
+    );
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -21,7 +33,7 @@ const Home = () => {
         <TouchableOpacity>
           <Image
             source={require('../../Assets/trolley.png')}
-            style={styles.image}
+            style={styles.imageShope}
           />
         </TouchableOpacity>
       </View>
@@ -76,6 +88,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   image: {width: 40, height: 40, marginLeft: 20},
+  imageShope: {width: 40, height: 40, marginTop: 5},
   searchComponent: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -108,5 +121,12 @@ const styles = StyleSheet.create({
   srtBtnContainer: {
     marginRight: -0.5,
     marginLeft: 5,
+  },
+
+  CategoryBar: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+    marginTop: 30,
   },
 });
