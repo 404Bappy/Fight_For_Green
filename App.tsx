@@ -1,4 +1,4 @@
-import {View, Text, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
 const Stack = createStackNavigator();
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';

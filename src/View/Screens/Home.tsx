@@ -9,8 +9,6 @@ import {
 } from 'react-native';
 import COLORS from '../../Consts/colors';
 import {TouchableOpacity} from 'react-native';
-import {FlatList} from 'react-native';
-import Plant from '../../Consts/Plant';
 
 const Home = () => {
   const [catergoryIndex, setCategoryIndex] = React.useState(0);
@@ -68,7 +66,6 @@ const Home = () => {
           ))}
         </View>
       </View>
-    
     </SafeAreaView>
   );
 };
