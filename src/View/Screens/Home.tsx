@@ -11,17 +11,9 @@ import COLORS from '../../Consts/colors';
 import {TouchableOpacity} from 'react-native';
 
 const Home = () => {
-  const Categories = ['POPULAR', 'ORGANIC', 'INDOORS', 'SYNTHETIC'];
+  const [catergoryIndex, setCategoryIndex] = React.useState(0);
 
-  const CategoryList = () => {
-    return (
-      <View>
-        {Categories.map((item, index) => (
-          <Text>{item}</Text>
-        ))}
-      </View>
-    );
-  };
+  const categories = ['POPULAR', 'ORGANIC', 'INDOORS', 'SYNTHETIC'];
 
   return (
     <SafeAreaView style={styles.container}>
@@ -54,6 +46,24 @@ const Home = () => {
               />
             </TouchableOpacity>
           </View>
+        </View>
+      </View>
+      <View>
+        <View style={styles.categoryContainer}>
+          {categories.map((item, index) => (
+            <TouchableOpacity
+              key={index}
+              activeOpacity={0.8}
+              onPress={() => setCategoryIndex(index)}>
+              <Text
+                style={[
+                  styles.categoryText,
+                  catergoryIndex === index && styles.categoryTextSelected,
+                ]}>
+                {item}
+              </Text>
+            </TouchableOpacity>
+          ))}
         </View>
       </View>
     </SafeAreaView>
@@ -109,12 +119,14 @@ const styles = StyleSheet.create({
     height: 40,
     marginLeft: 5,
     marginTop: 4,
+    alignItems: 'center',
+    justifyContent: 'center',
     borderRadius: 4,
     backgroundColor: COLORS.green,
   },
   srtImg: {
-    width: 40,
-    height: 40,
+    width: 30,
+    height: 30,
     marginTop: -2,
     color: COLORS.light,
   },
@@ -128,5 +140,18 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 20,
     marginTop: 30,
+  },
+  categoryContainer: {
+    flexDirection: 'row',
+    marginTop: 30,
+    marginBottom: 20,
+    justifyContent: 'space-between',
+  },
+  categoryText: {fontSize: 16, color: 'grey', fontWeight: 'bold'},
+  categoryTextSelected: {
+    color: COLORS.green,
+    paddingBottom: 5,
+    borderBottomWidth: 2,
+    borderColor: COLORS.green,
   },
 });
