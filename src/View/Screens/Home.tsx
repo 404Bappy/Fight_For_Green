@@ -141,7 +141,7 @@ const Home = () => {
       <FlatList
         numColumns={2}
         data={Plant}
-        renderItem={item => <Card Plant={item} />}
+        renderItem={({item}) => <Card Plant={item} />}
       />
     </SafeAreaView>
   );
