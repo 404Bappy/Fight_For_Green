@@ -22,9 +22,7 @@ const Home = () => {
 
   const Card = ({Plant}) => {
     return (
-      <TouchableOpacity
-        activeOpacity={0.8}
-        onPress={() => NavigationContainer.navigate('Details', Plant)}>
+      <TouchableOpacity activeOpacity={0.8}>
         <View style={styles.card}>
           <View style={{alignItems: 'flex-end'}}>
             <View
