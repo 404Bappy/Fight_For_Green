@@ -12,7 +12,8 @@ import COLORS from '../../Consts/colors';
 import {TouchableOpacity} from 'react-native';
 import {FlatList} from 'react-native';
 import Plant from '../../Consts/Plant';
-import ICON from 'react-native-vector-icons/MaterialIcons';
+import ICN from 'react-native-vector-icons/MaterialIcons';
+
 const width = Dimensions.get('window').width / 2 - 30;
 
 const Home = () => {
@@ -36,10 +37,9 @@ const Home = () => {
                   ? 'rgba(245, 42, 42,0.2)'
                   : 'rgba(0,0,0,0.2) ',
               }}>
-              <ICON
-                name="favorite"
-                size={18}
-                color={Plant.like ? COLORS.red : COLORS.dark}
+              <Image
+                source={require('../../Assets/love.png')}
+                style={styles.imageLove}
               />
             </View>
           </View>
@@ -67,20 +67,11 @@ const Home = () => {
             <Text style={{fontSize: 19, fontWeight: 'bold'}}>
               ${Plant.price}
             </Text>
-            <View
-              style={{
-                height: 25,
-                width: 25,
-                backgroundColor: COLORS.green,
-                borderRadius: 5,
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <Text
-                style={{fontSize: 22, color: COLORS.white, fontWeight: 'bold'}}>
-                +
-              </Text>
-            </View>
+
+            <Image
+              source={require('../../Assets/sign.png')}
+              style={styles.plusAdd}
+            />
           </View>
         </View>
       </TouchableOpacity>
@@ -139,6 +130,8 @@ const Home = () => {
         </View>
       </View>
       <FlatList
+        columnWrapperStyle={{justifyContent: 'space-between'}}
+        showsVerticalScrollIndicator={false}
         numColumns={2}
         data={Plant}
         renderItem={({item}) => <Card Plant={item} />}
@@ -241,8 +234,12 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   imageLove: {
-    height: 20,
-    width: 20,
+    height: 15,
+    width: 15,
     color: COLORS.light,
+  },
+  plusAdd: {
+    height: 25,
+    width: 25,
   },
 });
