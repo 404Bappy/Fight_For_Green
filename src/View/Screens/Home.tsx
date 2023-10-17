@@ -12,7 +12,6 @@ import COLORS from '../../Consts/colors';
 import {TouchableOpacity} from 'react-native';
 import {FlatList} from 'react-native';
 import Plant from '../../Consts/Plant';
-import ICN from 'react-native-vector-icons/MaterialIcons';
 
 const width = Dimensions.get('window').width / 2 - 30;
 
