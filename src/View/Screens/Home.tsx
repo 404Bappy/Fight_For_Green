@@ -13,6 +13,10 @@ import COLORS from '../../Consts/colors';
 import {TouchableOpacity} from 'react-native';
 import {FlatList} from 'react-native';
 import Plant from '../../Consts/Plant';
+import {useNavigation} from '@react-navigation/native';
+import Details from './Details';
+Details;
+const navigation = useNavigation();
 
 const width = Dimensions.get('window').width / 2 - 30;
 
@@ -23,7 +27,9 @@ const Home = () => {
   // @ts-ignore
   const Card = ({Plant}) => {
     return (
-      <TouchableOpacity activeOpacity={0.8}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Details', Plant)}
+        activeOpacity={0.8}>
         <View style={styles.card}>
           <View style={styles.favContainer}>
             <View
