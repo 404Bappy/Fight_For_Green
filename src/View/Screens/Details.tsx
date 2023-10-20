@@ -24,7 +24,10 @@ const Details = ({navigation, route}) => {
         </TouchableOpacity>
       </View>
       <View style={styles.imageContainer}>
-        <Image source={require('../../Assets/plant3.png')} style={{}} />
+        <Image
+          source={require('../../Assets/plant3.png')}
+          style={{resizeMode: 'contain', flex: 1}}
+        />
       </View>
     </SafeAreaView>
   );
@@ -47,5 +50,10 @@ const styles = StyleSheet.create({
     height: 30,
     width: 30,
   },
-  imageContainer: {},
+  imageContainer: {
+    flex: 0.45,
+    marginTop: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
