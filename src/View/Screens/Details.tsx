@@ -23,6 +23,9 @@ const Details = ({navigation, route}) => {
           />
         </TouchableOpacity>
       </View>
+      <View style={styles.imageContainer}>
+        <Image source={require('../../Assets/plant3.png')} style={{}} />
+      </View>
     </SafeAreaView>
   );
 };
@@ -44,4 +47,5 @@ const styles = StyleSheet.create({
     height: 30,
     width: 30,
   },
+  imageContainer: {},
 });
