@@ -25,7 +25,7 @@ const Details = ({navigation, route}) => {
       </View>
       <View style={styles.imageContainer}>
         <Image
-          source={require('../../Assets/plant3.png')}
+          source={require('../../Assets/plant1.png')}
           style={{resizeMode: 'contain', flex: 1}}
         />
       </View>
@@ -58,5 +58,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  ContainrerTreexx: {
+    flex: 0.55,
+    backgroundColor: COLORS.light,
+    marginHorizontal: 7,
+    marginBottom: 7,
+    borderRadius: 20,
+    marginTop: 30,
+    paddingTop: 30,
   },
 });
