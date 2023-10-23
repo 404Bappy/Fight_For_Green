@@ -1,4 +1,4 @@
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import COLORS from '../../Consts/colors';
@@ -28,6 +28,9 @@ const Details = ({navigation, route}) => {
           source={require('../../Assets/plant3.png')}
           style={{resizeMode: 'contain', flex: 1}}
         />
+      </View>
+      <View style={styles.ContainrerTreexx}>
+        <Text>HHHHHHHHHHHH</Text>
       </View>
     </SafeAreaView>
   );
