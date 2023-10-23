@@ -89,7 +89,7 @@ const Home = ({navigation}) => {
         </View>
         <TouchableOpacity>
           <Image
-            source={require('../../Assets/trolley.png')}
+            source={require('../../Assets/trolley-cart.png')}
             style={styles.imageShope}
           />
         </TouchableOpacity>
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   image: {width: 40, height: 40, marginLeft: 20},
-  imageShope: {width: 40, height: 40, marginTop: 5},
+  imageShope: {width: 35, height: 35, marginTop: 5},
   searchComponent: {
     flexDirection: 'row',
     alignItems: 'center',
